@@ -1,0 +1,200 @@
+/* Writer 1.0 */
+.writer-overlay {
+	position: absolute;
+	display: block;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,0.9);
+	opacity: 0;
+	z-index: 9999;
+	overflow: scroll;
+}
+.writer-overlay .fa-close {
+	font-size: 42px;
+	position: absolute;
+	right: 6%;
+	top: 6%;
+	color: #A7A7A7;
+	cursor: pointer;
+}
+.writer-overlay .fa-close:hover {
+	color: #E2585A;
+}
+.writer-overlay .container {
+	border: 1px solid #CCC;
+	background: #FFF;
+	margin-top: 96px;
+	margin-bottom: 96px;
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.33);
+	-moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.33);
+	box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.33);
+}
+.writer-overlay .form-group {
+	position: relative;
+}
+.writer-overlay .form-group select {
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
+	font-size: 21px;
+	border-radius: 0;
+	padding: 12px;
+	height: 60px;
+}
+.writer-overlay .title {
+	border-radius: 0;
+	font-size: 36px;
+	line-height: 48px;
+	font-weight: bold;
+	padding: 36px 18px;
+	margin-top: 48px;
+}
+.writer-overlay .location {
+	border-radius: 0;
+	font-size: 18px;
+	line-height: 33px;
+	height: 48px;
+	font-weight: bold;
+	padding: 6px 12px;
+	margin-top: 12px;
+}
+.writer-overlay .summary {
+	border-radius: 0;
+	font-size: 18px;
+	font-weight: 100;
+	padding: 18px;
+	margin-top: 48px;
+}
+.writer-overlay .image-group {
+	min-height: 360px;
+	background: #EFEFEF;
+	cursor: pointer;
+}
+.writer-overlay .image-group.portfolio {
+	margin: 15px 0 !important;
+}
+.writer-overlay .image-group:hover {
+	background: #D5D5D5;
+}
+.writer-overlay .image-group form > input {
+	display: none;
+}
+.writer-overlay .image-group label, .writer-overlay .image-group.portfolio {
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	margin: 0;
+	min-height: 360px;
+}
+.writer-overlay .image-group:hover .fa-edit, .writer-overlay .image-group.portfolio:hover .fa-remove {
+	opacity: 1;
+}
+.writer-overlay .image-group:hover .fa-edit:hover {
+	color: #38C19B;
+}
+.writer-overlay .image-group .fa-image, .writer-overlay .image-group .fa-circle-o-notch {
+	font-size: 36px;
+	color: #FFF;	
+	margin-top: 160px;
+}
+.writer-overlay .image-group .fa-edit {
+	font-size: 36px;
+	color: #FFF;	
+	position:absolute;
+	left: 50%;
+	top: 50%;
+	opacity: 0;
+}
+.writer-overlay .image-group .fa-remove {
+	font-size: 36px;
+	color: #FFF;	
+	position:absolute;
+	right: 48px;
+	top: 48px;
+	opacity: 0;
+}
+.writer-overlay .image-group img {
+	cursor: default;
+}
+.writer-overlay .image-group.portfolio .fa-remove:hover {
+	color: #E95052;
+}
+.writer-overlay .image-group figure:hover .fa-edit {
+	opacity: 1;
+}
+.writer-overlay .content {
+	display: block;
+	margin-top: 15px;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 24px;
+	padding: 12px;
+	border: 1px solid #FFF;
+}
+.writer-overlay .content:hover {
+	border-color: #CCC;
+}
+.writer-overlay .image-icons {
+	text-align: center;
+}
+.writer-overlay .image-icons i {
+	font-size: 21px;
+	padding: 10px 11px;
+	margin: 6px;
+	border: 1px solid #CCC;
+	border-radius: 50%;
+	cursor: pointer;
+	color: #38C19B;
+}
+.writer-overlay .image-icons .fa-image {
+	padding: 13px 12px;
+}
+.writer-overlay .image-icons i:hover {
+	background: #38C19B;
+	color: #EFEFEF;
+}
+.writer-overlay .content-group {
+	float: none;
+}
+.writer-overlay .content-group figure {
+	margin-bottom: 15px;
+	position: relative;
+}
+.writer-overlay .content-group .col-lg-12 {
+	float: none;
+}
+.writer-overlay .content-group .col-lg-12  .col-lg-6:first-child {
+	margin-right: 18px;
+}
+.writer-overlay .content-group .col-lg-12  .col-lg-6 {
+	float: none;
+	display: inline-block;
+	vertical-align: top;
+	width: calc(50% - 9px);
+}
+.writer-overlay .content-group figure .fa {
+	position: absolute;
+	bottom: 24px;
+	left: 24px;
+	font-size: 21px;
+	color: #FFF;
+	cursor: pointer;
+	opacity: 0;
+}
+.writer-overlay .content-group figure:hover .fa {
+	opacity: 1;
+}
+.writer-overlay .content-group figure .fa:hover {
+	color: #38C19B;
+}
+.writer-overlay .content-group figure .fa-edit {
+	left: 72px;
+}
+.writer-overlay .save {
+	position: fixed;
+	right: 48px;
+	bottom: 48px;
+	font-weight: 100;
+	font-size: 24px;
+}
