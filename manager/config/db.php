@@ -12,8 +12,8 @@
  * DB_PASS: the password of the above user
  */
 define("DB_HOST", "localhost");
-define("DB_NAME", "planasqs_pkd");
+define("DB_NAME", "prachikotharidesigns");
 define("DB_USER", "root");
-define("DB_PASS", "");
+define("DB_PASS", "password");
 
 define("BASE_URL", "http://localhost/prachikotharidesigns/");

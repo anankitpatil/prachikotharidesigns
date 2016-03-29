@@ -18,6 +18,11 @@ html, body {
 	width: auto !important;
   	overflow-x: hidden !important;
 }
+body.mobile-open {
+	position: fixed;
+	overflow: hidden !important;
+	width: 100% !important;
+}
 .overlay {
 	position: fixed;
 	z-index: 9999;
@@ -30,7 +35,6 @@ html, body {
 	position: absolute;
 	cursor: pointer;
 	top: 50%;
-	right: 0;
 	height: 25%;
 	width: auto;
 	-webkit-transform: translate(-50%, -50%);
@@ -105,6 +109,36 @@ input[type="color"]:focus,
   outline: 0 none !important;
 }
 /* Navigation */
+.navbar-toggle {
+	margin-top: 15px;
+}
+.navbar-toggle .icon-bar {
+	background: #cd8b4d;
+	position: relative;
+	transition: all 500ms ease-in-out;
+	width: 30px;
+	height: 2px;
+}
+.navbar-toggle .top-bar {
+	top: 0px;
+}
+.navbar-toggle .middle-bar {
+	top: 5px;
+}
+.navbar-toggle .bottom-bar {
+  	top: 10px;
+}
+.navbar-toggle.active .top-bar {
+	top: 10px;
+	transform: rotate(45deg);
+}
+.navbar-toggle.active .middle-bar {
+	background-color: transparent;
+}
+.navbar-toggle.active .bottom-bar {
+	top: -2px;
+	transform: rotate(-45deg);
+}
 .mobile {
 	z-index: 9999;
 	width: 100%;
@@ -118,54 +152,79 @@ input[type="color"]:focus,
 .mobile .row {
 	top: 50%;
 	width: 100%;
+	margin: 0px;
 	position: absolute;
 	-webkit-transform: translateY(-50%);
   	-ms-transform: translateY(-50%);
   	transform: translateY(-50%);
 }
 .mobile a {
-	font-size: 24px;
-	font-weight: 400;
+	font-size: 18px;
+	letter-spacing: 3px;
 	text-transform: uppercase;
 	color: #555555;
-	line-height: 60px;
+	font-family: 'Novecento';
+	line-height: 42px;
 	text-decoration: none;
 	padding-bottom: 3px;
 	border-bottom: 1px solid transparent;
 }
 .mobile a:hover {
-	border-bottom: 1px solid #555555;
+	border-bottom: 2px solid #555555;
 }
 .mobile.active {
 	visibility: visible;
 	opacity: 1;
+}
+.mobile .social {
+	margin-top: 48px;
+}
+.mobile-social {
+	width: 100%;
+	position: fixed;
+	bottom: 24px;
 }
 .logo-mobile object {
 	width: 100%;
 	height: auto;
 	pointer-events: none;
 }
-.menu-icon {
+.mobile-bar {
 	display: none;
-	font-size: 36px;
+	height: 72px;
 	position: fixed;
-	top: 24px;
-	right: 24px;
-	-webkit-transform: rotate(0deg);
-	cursor: pointer;
-	opacity: 0.66;
 	z-index: 9999;
+	top: 0px;
+	width: 100%;
+	background: rgba(247,247,247,0.81);
 }
-.menu-icon.active {
-	-webkit-transform: rotate(90deg);
+/*.menu-icon .cross {
+	display: none;
 }
+.menu-icon.active .burger {
+	display: none;
+}
+.menu-icon.active .cross {
+	display: block;
+}
+.menu-icon a {
+	height: 60px;
+	padding: 12px;
+	display: block;
+}
+.menu-icon object {
+	width: 36px;
+	height: auto;
+	pointer-events: none;
+}*/
 .logo-mobile {
 	width: 96px;
-	display: none;
-	position: fixed;
-	top: 30px;
+	position: absolute;
+	top: 19px;
 	left: 24px;
-	z-index: 9999;
+}
+.logo-mobile object {
+	pointer-events: none;
 }
 nav {
 	position: fixed;
@@ -290,7 +349,6 @@ nav .logo object {
 	text-align: center;
 	padding-top: 30px;
 	padding-left: 15px;
-	font-family: 'Tostada';
 	margin: 0;
 }
 .home .tag:hover h1 {
@@ -300,7 +358,6 @@ nav .logo object {
 	opacity: 1;
 }
 .home .tag h2, ._portfolio .tag h2 {
-	font-family: 'Tostada';
 	font-size: 48px;
 	position: absolute;
 	left: 50%;
@@ -371,6 +428,9 @@ nav .logo object {
 	padding: 24px;
 	background: rgba(217,217,217,1.00);
 }
+.home .newsletter .success, .home .newsletter .danger {
+	display: none;
+}
 .scrolldown {
 	position: fixed;
 	top: 66.66%;
@@ -390,11 +450,17 @@ nav .logo object {
 .scrolldown:hover {
 	-webkit-transform: scale(1.5);
 }
-.instafeed {
-	padding-top: 96px;
-}
 .instafeed .col-xs-3 {
 	margin-bottom: 30px;
+}
+.instafeed h6 {
+	padding: 12px;
+	margin: 0;
+	font-weight: 300;
+	line-height: 15px;
+	position: absolute;
+	bottom: 0px;
+	color: #cd8b4d;
 }
 /* About */
 .about {
@@ -417,6 +483,9 @@ nav .logo object {
 	font-weight: 300;
 }
 /* Blog */
+.blog {
+	margin-top: 180px;
+}
 .blog .featured, .home .featured {
 	margin-top: 180px;
 	height: 750px;
@@ -476,6 +545,9 @@ nav .logo object {
 .blog .featured p, .home .featured p {
 	color: rgba(247,247,247,1.00);
 }
+.blog .bitem {
+	padding-bottom: 96px;
+}
 .blog .bitem h1 {
 	font-size: 18px;
 	margin-top: 36px;
@@ -529,6 +601,7 @@ nav .logo object {
 	padding-bottom: 18px;
 	padding-top: 36px;
 	letter-spacing: 2px;
+	height: 92px;
 }
 ._portfolio .pitems h6 {
 	font-weight: 400;
@@ -662,10 +735,7 @@ nav .logo object {
 	box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
 }
 .services .line {
-	margin-bottom: 60px;
-}
-.services .text {
-	padding-top: 84px;
+	margin-bottom: 42px;
 }
 .services h1 {
 	font-family: 'Novecento';
@@ -690,7 +760,7 @@ nav .logo object {
 .contact {
 	margin-top: 180px;
 }
-.contact h2 {
+.contact h2, .instagram h2 {
 	font-family: 'Novecento';
 	font-size: 18px;
 	letter-spacing: 3px;
@@ -713,13 +783,16 @@ nav .logo object {
 	text-transform: none;
 }
 .contact .box {
-	padding: 24px;
+	padding: 12px;
 	border: 1px solid #555555;
 	-webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
 	-moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
 	box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
 }
-.contact input[type="text"], .contact textarea, .contact select, .contact button {
+.contact .box .line {
+	margin-bottom: 42px;
+}
+.contact form input, .contact textarea, .contact select, .contact button {
 	border-radius: 0;
 	font-size: 15px;
 	line-height: 21px;
@@ -758,6 +831,12 @@ nav .logo object {
 }
 .contact .form-group .help-block {
 	display: none;
+}
+.contact .alert-danger, .contact .alert-success {
+	display: none;
+}
+.instagram {
+	margin-top: 48px;
 }
 /* Footer */
 .social {
@@ -934,26 +1013,54 @@ footer .copy {
 @media(min-width:768px) {
 }
 @media(max-width:767px) {
-.logo-mobile {
+.mobile-bar {
 	display: block;
+}
+.overlay a {
+	left: 50%;
 }
 .header {
 	display: none;
-}
-.menu-icon {
-	display: block;
 }
 .home .item {
 	margin: 0 auto 15px;
 	padding: 0 15px;
 }
-.blog .featured, .home.featured {
-	height: 600px;
+.home.first {
+	margin-top: 96px;
 }
-.blog .featured .col-lg-5, .home .featured .col-lg-5 {
-	margin-top: -420px;
-	margin-left: 12px;
-	margin-right: 12px;
+.home .tagline, .home .tagline.bottom {
+	margin-top: 66px;
+}
+.about {
+	margin-top: 96px;
+}
+.about .picture {
+	margin-bottom: 48px;
+}
+._portfolio {
+	margin-top: 24px;
+}
+.project {
+	padding-top: 96px;
+}
+.project .project-slide .fa-chevron-right {
+    right: 12px;
+}
+.project .project-slide .fa-chevron-left {
+    left: 12px;
+}
+.services.container {
+	padding-top: 96px;
+}
+.services .item {
+	padding: 0px;
+}
+.blog .featured, .home.featured {
+	height: 420px;
+}
+.blog .featured .col-lg-12 {
+    padding: 0 12px;
 }
 .blog .featured h1, .home .featured h1 {
 	font-size: 30px;
@@ -962,16 +1069,6 @@ footer .copy {
 	height: 100%;
 	width: auto;
 	overflow: hidden;
-}
-._portfolio .landing-image {
-	margin-top: 150px;
-}
-._portfolio .landing-image h1 {
-	font-size: 24px;
-}
-._portfolio .landing-image figure {
-	height: 100%;
-	width: auto !important;
 }
 ._portfolio.pitem .col-lg-6 {
 	margin-bottom: 30px;
@@ -1003,8 +1100,17 @@ footer .copy {
 	height: auto;
 	padding: 0 24px;
 }
+.contact {
+	margin-top: 96px;
+}
+footer .copy {
+	margin-top: 36px;
+}
 }
 @media(min-width:768px) and (max-width:991px) {
+.overlay a {
+	right: 0px;
+}
 nav .logo {
 	padding: 18px 0px;
 }
@@ -1033,6 +1139,9 @@ nav .logo object {
 }
 }
 @media(min-width:992px) and (max-width:1199px) {
+.overlay a {
+	right: 0px;
+}
 nav .logo {
 	padding: 18px 0;
 }
@@ -1061,4 +1170,7 @@ nav .logo object {
 }
 }
 @media(min-width:1200px) {
+.overlay a {
+	right: 0px;
+}
 }

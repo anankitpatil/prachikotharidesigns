@@ -3,8 +3,8 @@ $name = $_POST["InputName"];
 $number = $_POST["InputNumber"];
 $email = $_POST["InputMail"];
 $message = $_POST["InputMessage"];
-$to = 'anankitpatil@gmail.com';
-$subject = 'prachikotharidesigns.com Contact Form | ' . $name;
+$to = 'prach25k@gmail.com';
+$subject = 'prachikotharidesigns.com | Contact Form' . $name;
 $message = 'From: ' . $name . "\r\n" .
 	'E - mail: ' . $email . "\r\n" . 
 	'Phone number: ' . $number . "\r\n" .

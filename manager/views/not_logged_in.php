@@ -28,9 +28,9 @@
     	  <label for="login_input_password">Password</label>
     	  <input id="login_input_password" class="login_input form-control" type="password" name="user_password" autocomplete="off" required />
         </div>
-        <div class="form-group last">
-    	  <input type="submit" name="login" value="Log in" class="btn btn-default" style="float: right;" />
-          <a href="register.php">Register</a>
+        <div class="form-group last text-center">
+    	  <input type="submit" name="login" value="Log in" class="btn btn-default" />
+          <!--a href="register.php">Register</a>-->
         </div>
 	  </form>
       </div>

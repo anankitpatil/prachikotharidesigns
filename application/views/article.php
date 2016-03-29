@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="row article-container">
-    <?php echo $row->content; ?>
+    <?php echo str_replace("[[]]", "&", $row->content); ?>
   </div>
 </div>
 <?php } include('footer.php'); ?>
