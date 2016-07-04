@@ -42,10 +42,10 @@
             <button class="btn smooth" type="submit" id="submit" name="submit">Send</button>
           </div>
         </form>
-        <div class="alert-success">
+        <div class="alert-success" style="background:none">
           <p>We shall get in touch soon.</p>
         </div>
-        <div class="alert-danger">
+        <div class="alert-danger" style="background:none">
           <p>Something went wrong, please try again.</p>
         </div>
       </div>

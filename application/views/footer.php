@@ -25,6 +25,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.9.0/validator.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/3.0.10/autosize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
 <script type="text/javascript" src="//wurfl.io/wurfl.js"></script>
 <script src="<?php echo BASE_URL; ?>static/js/writer.js"></script>
 <script src="<?php echo BASE_URL; ?>static/js/scripts.js"></script>
