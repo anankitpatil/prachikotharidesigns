@@ -1,5 +1,5 @@
 <?php
-define("UPLOAD_DIR", "/var/www/prachikotharidesigns/public_html/uploads/");
+define("UPLOAD_DIR", "/var/www/prachikotharidesigns.com/public_html/uploads/");
 if(isset($_REQUEST))
 {
 	if (isset($_FILES['image']['error']) && $_FILES['image']['error'] == 0)

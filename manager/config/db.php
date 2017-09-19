@@ -16,4 +16,4 @@ define("DB_NAME", "prachikotharidesigns");
 define("DB_USER", "root");
 define("DB_PASS", "password");
 
-define("BASE_URL", "http://localhost/prachikotharidesigns/");
+define("BASE_URL", "http://prachikotharidesigns.com/");

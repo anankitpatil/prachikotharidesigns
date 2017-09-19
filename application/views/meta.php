@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Prachi Kothari Designs
-<?php if(isset($title)) echo '- ' . $title; ?>
+<title>Prachi Kothari Designs - Interior Designer, Mumbai
+<?php if (isset($title)) {
+    echo ': '.$title;
+} ?>
 </title>
 <meta name="author" content="Prachi Kothari">
-<meta name="keywords" content="Prachi Kothari Designs Luxury Interior Design Mumbai">
+<meta name="keywords" content="Prachi Kothari Designs Luxury Interior Designer Decorator Mumbai">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="google-site-verification" content="6a8e-dbQ3l9oEtg23gtzcyNW4VQBKrp5pkCkA3W6KPM" />
 <meta name="description" content="Prachi Kothari is an Interior Designer from Mumbai. She has a soft corner for the baroque and rococo era for its drama and elegance. Art Deco and art nouveau for modern, contemporary design inspiration.">

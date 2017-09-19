@@ -2,9 +2,9 @@
 
 // New article
 (function($){
-	
+
 	// Main writer
-	
+
 	$.fn.writer = function() {
 		$(this).click(function(e) {
 			e.preventDefault();
@@ -46,7 +46,7 @@
 					error: function(){
 					  	alert('An error occured. Please refresh the page and try again.');
 					}
-				});	
+				});
 			});
 			$('.writer-overlay .image-icons i').imag();
 			var saver = setInterval(function(){
@@ -73,9 +73,9 @@
 			$('.writer-overlay').animate({'opacity': 1}, 300);
 		});
 	};
-	
+
 	// Editor
-	
+
 	$.fn.editor = function() {
 		$(this).click(function(e) {
 			e.preventDefault();
@@ -124,7 +124,7 @@
 					error: function(){
 					  	alert('An error occured. Please refresh the page and try again.');
 					}
-				});	
+				});
 			});
 			$('.writer-overlay .image-icons i').imag();
 			var saver = setInterval(function(){
@@ -150,9 +150,9 @@
 			$('.writer-overlay').animate({'opacity': 1}, 300);
 		});
 	};
-	
+
 	// Image icons at bottom
-	
+
 	$.fn.imag = function() {
 		$(this).click(function() {
 			switch(this.className) {
@@ -181,9 +181,9 @@
 							error: function(){
 								alert('An error occured. Please refresh the page and try again.');
 							}
-						});		
+						});
 					});
-					break;	
+					break;
 				case 'fa fa-image':
 					$('<input type="file" />').trigger('click').change(function() {
 						var file = $(this).get(0).files[0];
@@ -209,7 +209,7 @@
 							error: function(){
 								alert('An error occured. Please refresh the page and try again.');
 							}
-						});		
+						});
 					});
 					break;
 				case 'fa fa-toggle-right':
@@ -237,15 +237,15 @@
 							error: function(){
 								alert('An error occured. Please refresh the page and try again.');
 							}
-						});		
+						});
 					});
 					break;
 			};
 		});
 	};
-	
+
 	// Paragraph functions
-	
+
 	$.fn.para = function() {
 		$(this).on('input', function() {
 			var tx = $(this).text();
@@ -272,9 +272,9 @@
 			}
 		});
 	};
-	
+
 	// Image overlay buttons and functions
-	
+
 	$.fn.imgedit = function() {
 		$(this).find('.fa-remove').click(function(e) {
 			var image = $(this).siblings('img').attr('src');
@@ -290,7 +290,7 @@
 				data: 'image=' + image.substr(image.lastIndexOf("/")+1),
 				url: 'delete.php',
 				type: 'POST'
-			});	
+			});
 		});
 		$(this).find('.fa-edit').click(function(e) {
 			var image = $(this).siblings('img').attr('src');
@@ -313,18 +313,18 @@
 					error: function(){
 						alert('An error occured. Please refresh the page and try again.');
 					}
-				});		
+				});
 			});
 			$.ajax({
 				data: 'image=' + image.substr(image.lastIndexOf("/")+1),
 				url: 'delete.php',
 				type: 'POST'
-			});	
+			});
 		});
 	};
-	
+
 	// Delete entry
-	
+
 	$.fn.deleter = function() {
 		$(this).click(function(e) {
 			e.preventDefault();
@@ -340,18 +340,18 @@
 			});
 		});
 	};
-	
+
 	// Close overlay
-	
+
 	$.fn.pack = function() {
 		$(this).click(function(e) {
 			e.preventDefault();
 			$('body').animate({'opacity': 0}, 300, function() { location.reload(); });
 		});
 	};
-	
+
 	// Portfolio add
-	
+
 	$.fn.portfolioAdd = function() {
 		$(this).click(function(e) {
 			e.preventDefault();
@@ -377,9 +377,9 @@
 							images = images + $(element).find('figure').html().replace("'", '(())').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '[[]]').replace('../img.php?src=', '').replace('[[]]width=1138[[]]crop-to-fit', '');
 						}
 					});
-					
+
 					$.ajax({
-						data: 'title=' + $('.writer-overlay .title').val().replace("'", '(())') + '&location=' + $('.writer-overlay .location').val() + '&content=' + $('.writer-overlay .summary').val() + '&content=' + $('.writer-overlay .summary').val() + '&images=' + images + '&tag=' + $('.writer-overlay .tag').val() + '&service=' + $('.writer-overlay .service').val() + id,
+						data: 'title=' + $('.writer-overlay .title').val().replace("'", '(())') + '&location=' + $('.writer-overlay .location').val() + '&content=' + $('.writer-overlay .summary').val().replace('&', 'and') + '&images=' + images + '&tag=' + $('.writer-overlay .tag').val() + '&service=' + $('.writer-overlay .service').val() + id,
 						url: 'portfolio_save.php',
 						type: 'POST',
 						beforeSend: function() {
@@ -397,9 +397,9 @@
 			$('.writer-overlay').animate({'opacity': 1}, 300);
 		});
 	};
-	
+
 	// Portfolio Edit
-	
+
 	$.fn.portfolioEdit = function() {
 		$(this).click(function(e) {
 			e.preventDefault();
@@ -440,8 +440,9 @@
 						}
 					});
 					var id = '&id=' + $('.writer-overlay').attr('id');
+
 					$.ajax({
-						data: 'title=' + $('.writer-overlay .title').val().replace("'", '(())') + '&location=' + $('.writer-overlay .location').val() + '&content=' + $('.writer-overlay .summary').val() + '&images=' + images + '&tag=' + $('.writer-overlay .tag').val() + '&service=' + $('.writer-overlay .service').val() + id,
+						data: 'title=' + $('.writer-overlay .title').val().replace("'", '(())') + '&location=' + $('.writer-overlay .location').val() + '&content=' + $('.writer-overlay .summary').val().replace('&', 'and') + '&images=' + images + '&tag=' + $('.writer-overlay .tag').val() + '&service=' + $('.writer-overlay .service').val() + id,
 						url: 'portfolio_save.php',
 						type: 'POST',
 						beforeSend: function() {
@@ -460,7 +461,7 @@
 			$('.writer-overlay').animate({'opacity': 1}, 300);
 		});
 	};
-	
+
 	$.fn.portfolioImage = function() {
 		$(this).click(function(e) {
 			if($(e.target).is('img')) return;
@@ -495,13 +496,13 @@
 					error: function(){
 						alert('An error occured. Please refresh the page and try again.');
 					}
-				});	
+				});
 			});
 		});
 	};
-	
+
 	// Delete entry
-	
+
 	$.fn.portfolioDel = function() {
 		$(this).click(function(e) {
 			e.preventDefault();
@@ -517,7 +518,7 @@
 			});
 		});
 	};
-	
+
 })(jQuery);
 
 /*!

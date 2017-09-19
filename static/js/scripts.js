@@ -93,7 +93,6 @@ $(document).ready(function() {
 			// handle the invalid form...
 		  } else {
 			e.preventDefault();
-			$('.newsletter form input[type="email"]').prop('disabled', true);
 			$('.newsletter form').off('submit');
 			$.post('../static/scripts/newsletter.php', $(this).serialize(), function(result) {
 				$('.newsletter form').hide(300);
@@ -102,6 +101,7 @@ $(document).ready(function() {
 				$('.newsletter form').hide(300);
 				$('.newsletter .danger').css('display', 'block');
 			});
+			$('.newsletter form input[type="email"]').prop('disabled', true);
 		  }
 		});
 	}
@@ -112,8 +112,8 @@ $(document).ready(function() {
 		var instaFeed = new Instafeed({
 			get: 'user',
 			userId: 1707742711,
-			clientId: '17f057d81cc14558bf5c4ae2fa9ed4f1',
-			accessToken: '1200610988.17f057d.79066d461597400f9a8c20ed7378313f',
+			clientId: '1c1334e5686d4e01b6d4bd1ef1569fd8',
+			accessToken: '1707742711.1677ed0.6e03bd0586b64f03b1291f0738d9f290',
 			sortBy: 'most-recent',
 			limit: 6,
 			resolution: 'standard_resolution',
