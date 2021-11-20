@@ -13,7 +13,7 @@
  */
 define("DB_HOST", "localhost");
 define("DB_NAME", "prachikotharidesigns");
-define("DB_USER", "root");
-define("DB_PASS", "password");
+define("DB_USER", "prachikotharidesigns");
+define("DB_PASS", "All!gat0r");
 
 define("BASE_URL", "http://prachikotharidesigns.com/");

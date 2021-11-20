@@ -13,7 +13,11 @@
   </div>
   <div class="row">
     <div class="col-sm-2"></div>
-    <div class="col-sm-8 text-center tagline"><span>W</span>e are integrated design unit, offering various services from interior design, styling & even consultation services to transform any space in to a visual representation of you.  Let's start adding a splash of design & a dash of style in your life!</div>
+    <div class="col-sm-8 text-center tagline">
+      <p><span>W</span>e understand that making your home, retail space or office can be an exciting yet daunting affair. But, we have you covered!</p>
+      <p><span>O</span>ur services to you include everything from designing amazing bespoke Interiors that are tailor- made to your dreams, to assisting you in selecting & hiring PMCs, vendors, negotiations & overseeing critical quality outcomes on site.</p>
+      <p><span>T</span>hrough your entire journey, the only number you will need to reach out to is ours. We take pride in our holistic service that takes care of everything related to your project, from helping you source the best furniture to the last doorknob and everything in between. Our design philosophy has always been to reciprocate the exclusivity of each client. We look forward to making a gorgeous space for you too!</p>
+    </div>
     <div class="col-sm-2"></div>
     <div class="col-sm-12">
       <div class="line"></div>
@@ -23,19 +27,19 @@
 <div class="container-fluid nopadding">
   <div class="holder">
     <?php foreach ($result as $row) {
-      $doc = new DOMDocument();
-      libxml_use_internal_errors(true);
-      $doc->loadHTML($row->images);
-      libxml_use_internal_errors(false);
-      $images = $doc->getElementsByTagName('img');
-      $y = 0;
-      foreach ($images as $image) {
-        if($y == 0) {
-          echo '<a href="portfolio/article/' . strtolower(str_replace(" ", "-", $row->title)) . '" title="Prachi Kothari Designs, Portfolio: ' . str_replace("(())", "'", $row->title) . ' - ' . $row->location . '"><figure><img src="img.php?src=' . $image->getAttribute('src') . '&width=600&height=400&crop-to-fit" /><span><h3>' . str_replace("(())", "'", $row->title) . '</h3><p>' . $row->location . '</p><div class="line"></div></span></figure></a>';
-          $y++;
+    $doc = new DOMDocument();
+    libxml_use_internal_errors(true);
+    $doc->loadHTML($row->images);
+    libxml_use_internal_errors(false);
+    $images = $doc->getElementsByTagName('img');
+    $y = 0;
+    foreach ($images as $image) {
+        if ($y == 0) {
+            echo '<a href="portfolio/article/' . strtolower(str_replace(" ", "-", $row->title)) . '" title="Prachi Kothari Designs, Portfolio: ' . str_replace("(())", "'", $row->title) . ' - ' . $row->location . '"><figure><img src="img.php?src=' . $image->getAttribute('src') . '&width=600&height=400&crop-to-fit" /><span><h3>' . str_replace("(())", "'", $row->title) . '</h3><p>' . $row->location . '</p><div class="line"></div></span></figure></a>';
+            $y++;
         }
-      }
-  }?>
+    }
+}?>
   </div>
 </div>
 <div class="container home">
@@ -48,15 +52,15 @@
     </div>
   </div>
   <div class="row hblog">
-    <?php 
-	  $i = 0; 
-	  foreach ($resultb as $row) {
-		$doc = new DOMDocument();
-		libxml_use_internal_errors(true);
-		$doc->loadHTML($row->content);
-		libxml_use_internal_errors(false);
-		$content = substr($doc->getElementsByTagName('p')->item(0)->nodeValue, 0, 240) . '...';
-		if($i < 3) { ?>
+    <?php
+      $i = 0;
+      foreach ($resultb as $row) {
+          $doc = new DOMDocument();
+          libxml_use_internal_errors(true);
+          $doc->loadHTML($row->content);
+          libxml_use_internal_errors(false);
+          $content = substr($doc->getElementsByTagName('p')->item(0)->nodeValue, 0, 240) . '...';
+          if ($i < 3) { ?>
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
       <figure><img src="img.php?src=uploads/<?php echo $row->featured; ?>&width=360&height=240&crop-to-fit" title="Prachi Kothari Designs, Blog: <?php echo $row->title; ?>" /></figure>
       <h1><?php echo $row->title; ?></h1>
@@ -65,7 +69,7 @@
       <p><?php echo $content; ?></p>
       <a class="smooth" href="blog/article/<?php echo strtolower(str_replace(" ", "-", $row->title)); ?>" title="Prachi Kothari Designs, Blog: <?php echo $row->title; ?>">Read more</a> </div>
     <?php $i++; }
-	} ?>
+      } ?>
   </div>
   <div class="newsletter row">
     <div class="col-md-3"></div>

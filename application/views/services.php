@@ -25,8 +25,8 @@
         <div class="col-lg-12 text-center">
           <h1>Interior Styling</h1>
           <div class="line"></div>
-          <p>There is no Ying (Design) without the Yang (Styling)! Spice Up your space and add some style with us. Interior styling is the missing link & completes the process of bringing life to YOUR space.
-          <p>We spend a lot of time in drawing out and visualizing the ‘style’ right from the colour palette, texture, material selection, to furniture advising & other minute important details, are given a second, third and maybe 5th eye as well!</p>
+          <p>There is no YIN (Design) without the Yang (Styling)! Spice Up your space and add some style with us. Interior styling is the missing link & completes the process of bringing Life to Your Space.</p>
+          <p>We spend a lot of time in drawing out and visualizing the ‘style’ right from the colour palette, texture, material to furniture & other minute but important details, are given the utmost attention and care.</p>
         </div>
       </div>
     </div>

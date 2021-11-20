@@ -8,4 +8,4 @@ RewriteRule . index.php [L]
 # Prevent file browsing
 Options -Indexes
 
-#AddHandler application/x-httpd-php53 .php .php5 .php4 .php3
+AddHandler application/x-httpd-php53 .php .php5 .php4 .php3

@@ -9,25 +9,24 @@
   <div class="row">
     <div class="col-lg-12">
       <ul class="media-list">
-	  	<?php $connection = mysql_connect(DB_HOST, DB_USER, DB_PASS);
-      	mysql_select_db(DB_NAME, $connection);
-      	$data = mysql_query("SELECT * FROM blog ORDER BY date DESC") or die(mysql_error());
-      	while($article = mysql_fetch_array($data)) { ?>
+	  	<?php $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+          $data = mysqli_query($connection, "SELECT * FROM blog ORDER BY date DESC") or die(mysqli_error($connection));
+          while ($article = mysqli_fetch_array($data)) { ?>
       	  <li class="media">
     	    <div class="media-left">
       	  	  <a href="#">
                 <?php $doc = new DOMDocument();
-				libxml_use_internal_errors(true);
-				$doc->loadHTML($article['content']);
-				libxml_use_internal_errors(false);
-				// img = $doc->getElementsByTagName('img')->item(0);
-				echo '<img class="media-object" src="../img.php?src=uploads/' . $article['featured'] .'&width=240&height=180&crop-to-fit" alt="' . $article['title'] . '">'; ?>
+                libxml_use_internal_errors(true);
+                $doc->loadHTML($article['content']);
+                libxml_use_internal_errors(false);
+                // img = $doc->getElementsByTagName('img')->item(0);
+                echo '<img class="media-object" src="../img.php?src=uploads/' . $article['featured'] .'&width=240&height=180&crop-to-fit" alt="' . $article['title'] . '">'; ?>
       	  	  </a>
             </div>
             <div class="media-body">
               <h2 class="media-heading"><?php echo $article['title']; ?><i class="fa fa-pencil" id="<?php echo $article['id']; ?>"></i><i class="fa fa-remove" id="<?php echo $article['id']; ?>"></i></h2>
               <?php  $p = $doc->getElementsByTagName('p')->item(0);
-			    echo '<p>' . substr($p->nodeValue, 0, 360) . '...</p>'; ?>
+                echo '<p>' . substr($p->nodeValue, 0, 360) . '...</p>'; ?>
             </div>
           </li>
       	<?php } ?>

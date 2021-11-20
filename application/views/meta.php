@@ -7,6 +7,7 @@
     echo ': '.$title;
 } ?>
 </title>
+<meta name="google-site-verification" content="6a8e-dbQ3l9oEtg23gtzcyNW4VQBKrp5pkCkA3W6KPM" />
 <meta name="author" content="Prachi Kothari">
 <meta name="keywords" content="Prachi Kothari Designs Luxury Interior Designer Decorator Mumbai">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
